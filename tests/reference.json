@@ -1,0 +1,69 @@
+{
+  "id": "E140",
+  "value": 36.583138686660476,
+  "reference70": "36.58313868666047798928628070793221263259039089054655907496241571274559",
+  "method": "Independent Python Decimal with 80-digit working precision, reported to 70 significant digits; direct physical formula. E140 uses 260-step dimensional-wavenumber bisection, independent of the runtime dimensionless solver.",
+  "cases": [
+    {
+      "name": "deep-water limit",
+      "values": {
+        "period": 2,
+        "depth": 1000
+      },
+      "expected": 6.243107290688542,
+      "reference70": "6.243107290688541578071695832308271873780934739602588932445247838460721"
+    },
+    {
+      "name": "shallow-water limit",
+      "values": {
+        "period": 100000,
+        "depth": 0.01
+      },
+      "expected": 31315.57120664868,
+      "reference70": "31315.57120664868301527766458536122888440307506106437348331549291182823"
+    },
+    {
+      "name": "intermediate-depth nontrivial solution",
+      "values": {
+        "period": 10,
+        "depth": 1,
+        "g": 9.81
+      },
+      "expected": 31.1107083313843,
+      "reference70": "31.11070833138429701404010489540421532578840451445031082918473340169576"
+    },
+    {
+      "name": "centimeter depth",
+      "values": {
+        "period": 2,
+        "depth": 0.01
+      },
+      "expected": 0.6252606958664454,
+      "reference70": "0.6252606958664453636722315365542604415611517826934439743732978485518091"
+    },
+    {
+      "name": "balanced extreme shallow regime",
+      "values": {
+        "period": 1e+200,
+        "depth": 1e-200,
+        "g": 1e-200
+      },
+      "expected": 1.0,
+      "reference70": "1.0"
+    },
+    {
+      "name": "zero depth rejected",
+      "values": {
+        "depth": 0
+      },
+      "throws": true
+    },
+    {
+      "name": "zero period rejected",
+      "values": {
+        "period": 0
+      },
+      "throws": true
+    }
+  ]
+}

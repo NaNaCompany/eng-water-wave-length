@@ -1,0 +1,60 @@
+export const tool={
+  "category": "유체역학",
+  "category_en": "Fluid mechanics",
+  "id": "E140",
+  "slug": "eng-water-wave-length",
+  "title": "유한 수심 수면파 파장 계산기",
+  "title_en": "Finite-Depth Gravity Wave Wavelength Calculator",
+  "fields": [
+    {
+      "key": "period",
+      "label": "파도 주기 T",
+      "label_en": "Wave period T",
+      "dimension": "time",
+      "example": 5,
+      "constraint": "positive",
+      "display_unit": "s",
+      "display_value": "5"
+    },
+    {
+      "key": "depth",
+      "label": "평균 수심 h",
+      "label_en": "Mean water depth h",
+      "dimension": "length",
+      "example": 10,
+      "constraint": "positive",
+      "display_unit": "m",
+      "display_value": "10"
+    },
+    {
+      "key": "g",
+      "label": "중력가속도",
+      "label_en": "Gravitational acceleration",
+      "dimension": "acceleration",
+      "example": 9.80665,
+      "constraint": "positive",
+      "display_unit": "ms2",
+      "display_value": "9.8066499999999994"
+    }
+  ],
+  "result_label": "선형 중력파 파장 λ",
+  "result_label_en": "Linear gravity-wave wavelength λ",
+  "result_dimension": "length",
+  "formula": "(2π/T)² = gk tanh(kh), λ = 2π/k",
+  "purpose": "유한 수심의 선형 중력파 분산식을 양의 파수에 대해 풀어 파장을 계산합니다. 얕은 물·깊은 물의 근사 사이도 연속적으로 계산합니다.",
+  "purpose_en": "Solve the finite-depth linear gravity-wave dispersion equation for positive wavenumber to obtain wavelength, continuously spanning shallow and deep water.",
+  "assumptions": "작은 진폭의 선형 중력파이며 바닥은 수평이고 수심이 일정합니다. 비압축성·비점성·비회전 유동이며 평균 흐름이 없습니다. 표면장력·쇄파·강한 비선형성을 무시합니다. 모세관파나 급변 수심에는 적용하지 않습니다.",
+  "assumptions_en": "Required: small-amplitude linear gravity waves over a flat bottom with uniform depth, incompressible inviscid irrotational flow and no mean current. Excluded: surface tension, breaking, strong nonlinearity, capillary waves and rapidly varying depth.",
+  "sources": [
+    {
+      "label": "MIT: Finite-depth gravity-wave dispersion",
+      "url": "https://web.mit.edu/fluids-modules/www/potential_flows/LecturesHTML/lec19bu/node4.html"
+    }
+  ],
+  "condition": "작은 진폭·일정 수심·평균 흐름 없음·중력파 모델을 확인했습니다.",
+  "condition_en": "I confirmed small amplitude, uniform depth, no mean current and the gravity-wave model.",
+  "site": "https://nanalab.kr/eng-water-wave-length/",
+  "repository": "https://github.com/NaNaCompany/eng-water-wave-length",
+  "groups": [],
+  "output_unit": "m"
+};
